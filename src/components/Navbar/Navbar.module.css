@@ -1,0 +1,67 @@
+.navbar {
+  background: rgba(255, 255, 255, .8);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  display: flex;
+  height: 60px;
+  max-width: 810px;
+  position: fixed;
+  width: 100%;
+}
+
+.restaurantName {
+  align-items: center;
+  color: #4c4c4c;
+  display: flex;
+  flex-grow: 1;
+  font-size: 20px;
+  margin: 0 0 0 20px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.navButtons {
+  display: flex;
+}
+
+.navButtons a {
+  align-items: center;
+  border-left: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  transition: background-color .4s ease-out;
+  width: 60px;
+}
+
+.navButtons a.active,
+.navButtons a:hover {
+  background: rgba(238, 238, 238, .7);
+}
+
+.navButtons svg {
+  fill: #666;
+  height: 30px;
+  width: 30px;
+}
+
+.navbar .cartItems {
+  align-items: center;
+  background: #ff0005;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  font-size: 12px;
+  font-weight: bold;
+  height: 20px;
+  justify-content: center;
+  position: absolute;
+  right: 3px;
+  text-align: center;
+  top: 3px;
+  width: 20px;
+  animation: rollout 0.4s;
+}
+@keyframes rollout {
+  0% { transform: translateY(-100px); }
+  100% { transform: none; }
+}

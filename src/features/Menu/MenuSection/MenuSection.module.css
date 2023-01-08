@@ -1,0 +1,15 @@
+.menuSection {
+  padding: 16px;
+}
+
+.articleWrap {
+  display: flex;
+}
+
+.articleColumn {
+  margin-left: 16px;
+}
+
+.articleColumn:first-child {
+  margin-left: 0;
+}
