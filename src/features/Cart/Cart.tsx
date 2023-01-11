@@ -1,9 +1,10 @@
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../app/hooks";
+import type { CartItem } from "../../app/dataTypes";
 
 const Cart = () => {
-  const items = useSelector(state => state.cart.items);
+  const items = useAppSelector(state => state.cart.items);
   
-  const cartItems = items.map(el => 
+  const cartItems = items.map((el: CartItem) => 
     <li key={el.item.id}>
       <span>{el.item.name}</span>
       <span>{el.item.price} RON</span>

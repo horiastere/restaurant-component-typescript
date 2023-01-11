@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface MenuCategory {
   id: number;
   name: string;
@@ -12,4 +14,25 @@ export interface MenuItem {
   thumbnail?: string;
   tags?: string[]
   options?: []
+}
+
+export interface ExtraOptionsType {
+  id: number;
+  name: string;
+  price: number;
+  isChecked?: boolean
+}
+
+export interface ButtonType {
+  name: string;
+  handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  type?: string;
+  price?: number | string;
+}
+
+export interface CartItem {
+  item: MenuItem;
+  extraOptions: [];
+  quantity: number;
+  extraInstructions?: string;
 }

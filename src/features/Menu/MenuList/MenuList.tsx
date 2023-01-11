@@ -1,19 +1,21 @@
 import styles from './MenuList.module.css';
 
 import { useDispatch } from 'react-redux';
-// import { openModal } from '../../../components/Modal/modalSlice';
+import { openModal } from '../../../components/Modal/modalSlice';
 
 import { ReactComponent as IconGlutenFree } from '../../../assets/gluten-free.svg';
 import { ReactComponent as IconVegan } from '../../../assets/vegetarian.svg';
 
-const MenuList = ({item}) => {
+import { MenuItem } from '../../../app/dataTypes';
+
+const MenuList = ({item}: {item: MenuItem}) => {
   const dispatch = useDispatch();
 
-  // const openModals = () => {
-  //   dispatch(openModal(item));
-  // }
+  const openModalMenu = () => {
+    dispatch(openModal({contentType: 'addItemToCart', contentInfo: item}));
+  }
 
-  const tags = item.tags.map(tag => {
+  const tags = item.tags!.map(tag => {
     let tagName;
     let tagIcon;
 
@@ -35,7 +37,7 @@ const MenuList = ({item}) => {
 
   return (
     <article className={styles.listItem}
-      // onClick={openModals}
+      onClick={openModalMenu}
     >
       <div className={styles.description}>
         {item.thumbnail && 

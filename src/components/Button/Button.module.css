@@ -1,0 +1,38 @@
+.button {
+  background: #f08b18;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  max-width: 400px;
+  padding: 10px 15px;
+}
+
+.button.addToCart {
+  display: flex;
+  width: 100%;
+}
+
+.button .price {
+  border-right: 1px solid #ccc;
+  flex-grow: 1;
+  margin-right: 10px;
+  padding-right: 10px;
+}
+
+.button .buttonName {
+  flex-grow: 2;
+}
+
+.button.secondary {
+  background: #fff;
+  border: 1px solid #7a8799;
+  color: #7a8799;
+}
+
+.button.secondary:hover {
+  background: rgba(0,0,0, .1)
+}

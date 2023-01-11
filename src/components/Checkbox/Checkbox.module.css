@@ -1,0 +1,67 @@
+.checkboxWrap input {
+  display: none;
+}
+
+.checkboxWrap label {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  padding: 8px;
+}
+
+.checkboxWrap input:checked + label {
+  background: #e1eef5;
+}
+
+.checkboxWrap input + label .checkbox {
+  align-items: center;
+  border: 1px solid #666;
+  border-radius: 3px;
+  display: flex;
+  height: 14px;
+  justify-content: center;
+  width: 14px;
+}
+
+.checkboxWrap input + label .checkbox svg {display: none;}
+
+.checkboxWrap input:checked + label .checkbox svg {
+  display: block;
+  position: absolute;
+}
+
+.checkboxWrap .optionName {
+  flex-grow: 1;
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+/*
+.checkbox label:before {
+  content:'';
+  border: 1px solid #666;
+  border-radius: 3px;
+  padding: 7px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.checkbox input:checked + label {
+  background: #e1eef5;
+}
+
+.checkbox input:checked + label:after {
+  content: '';
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 24 24' fill='%23666666'%3E%3Cpath d='M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z'/%3E%3C/svg%3E") no-repeat 0 0;
+  background-size: 12px;
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 2px;
+  height: 14px;
+  width: 14px;
+}
+*/

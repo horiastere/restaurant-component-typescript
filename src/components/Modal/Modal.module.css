@@ -1,0 +1,45 @@
+.modalWrap {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.modalOverlay {
+  background: rgba(0, 0, 0, .4);
+  cursor: pointer;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.modalBody {
+  background: #f7f7f7;
+  border: 1px solid #ccc;
+  max-height: 80%;
+  max-width: 500px;
+  padding: 20px;
+  width: 50%;
+  z-index:1;
+}
+
+.buttonClose {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  cursor: pointer;
+  fill: #666;
+  float: right;
+  height: 15px;
+  padding: 3px;
+  margin: -30px -30px 0 0;
+  width: 15px;
+}
+
+p { font-size: 14px; }
