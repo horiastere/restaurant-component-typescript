@@ -8,7 +8,8 @@ const Button = ({name, handleClick, type = '', price}: ButtonType) => {
   return (
     <button
       className={`${styles.button} ${extraClass}`}
-      onClick={e => handleClick(e)}>
+      onClick={e => handleClick(e)}
+      data-testid="button">
         {price && 
           <span className={styles.price}>{price} EUR</span>
         }

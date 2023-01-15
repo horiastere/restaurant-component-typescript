@@ -16,7 +16,7 @@ const Navbar = () => {
   
   return (
     <nav className={styles.navbar}>
-      <h1 className={styles.restaurantName}>Blue Margarita</h1>
+      <h1 data-testid="title" className={styles.restaurantName}>Blue Margarita</h1>
 
       <div className={styles.navButtons}>
         <Link to="/"><MenuIcon /></Link>
