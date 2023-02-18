@@ -1,5 +1,7 @@
 import styles from './Button.module.css';
 
+import Spinner from '../Spinner/Spinner';
+
 import type { ButtonType } from '../../app/dataTypes';
 
 const Button = ({name, handleClick, type = '', price}: ButtonType) => {
@@ -14,6 +16,8 @@ const Button = ({name, handleClick, type = '', price}: ButtonType) => {
           <span className={styles.price}>{price} EUR</span>
         }
         <span className={styles.buttonName}>{name}</span>
+
+        <Spinner />
     </button>
   );
 }
