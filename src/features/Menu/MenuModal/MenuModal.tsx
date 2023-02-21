@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../../../app/hooks";
 
 import { addToCart } from '../../Cart/cartSlice';
@@ -13,12 +13,16 @@ import styles from './MenuModal.module.css';
 const MenuModal = () => {
   const dispatch = useAppDispatch();
 
+  const itemsInCart = useAppSelector(state => state.cart.items);
+
   const item = useAppSelector(state => state.modal.contentInfo);
   const availableExtraOptions = item.options.map((el: ExtraOptionsType) => ({...el, isChecked: false}));
 
   const [extraOptions, setExtraOptions] = useState(availableExtraOptions);
   const [extraInstructions, setExtraInstructions] = useState('');
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleOptionSelect = (option: ExtraOptionsType) => {
     const index = extraOptions.findIndex((el: ExtraOptionsType) => el.id === option.id);
@@ -52,14 +56,23 @@ const MenuModal = () => {
 
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    
+
+    if (isLoading) return;
+
     dispatch(addToCart({
       item,
       extraOptions,
       extraInstructions,
       quantity
     }))
+
+    setIsLoading(true);
   }
+
+  // disable button for a few ms to discourage multiple clicking
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 500)
+  }, [itemsInCart])
   
   return (
     <>
@@ -99,6 +112,7 @@ const MenuModal = () => {
           type="addToCart"
           handleClick={e => handleSubmit(e)}
           price="20"
+          isLoading={isLoading}
         />
         {/* <Button name="Submit" handleClick={handleSubmit} />
         <Button name="Cancel" type="secondary" handleClick={handleSubmit} /> */}

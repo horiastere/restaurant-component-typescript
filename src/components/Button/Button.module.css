@@ -9,6 +9,7 @@
   margin-top: 10px;
   max-width: 400px;
   padding: 10px 15px;
+  position: relative;
 }
 
 .button.addToCart {
@@ -35,4 +36,8 @@
 
 .button.secondary:hover {
   background: rgba(0,0,0, .1)
+}
+
+.button.disabled {
+  background: #7a8799 !important;
 }

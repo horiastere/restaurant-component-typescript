@@ -28,6 +28,7 @@ export interface ButtonType {
   handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   type?: string;
   price?: number | string;
+  isLoading?: boolean;
 }
 
 export interface CartItem {

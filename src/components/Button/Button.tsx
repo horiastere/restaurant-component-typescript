@@ -4,12 +4,12 @@ import Spinner from '../Spinner/Spinner';
 
 import type { ButtonType } from '../../app/dataTypes';
 
-const Button = ({name, handleClick, type = '', price}: ButtonType) => {
+const Button = ({name, handleClick, type = '', price, isLoading = false}: ButtonType) => {
   const extraClass = styles[type] || '';
 
   return (
     <button
-      className={`${styles.button} ${extraClass}`}
+      className={`${styles.button} ${extraClass} ${isLoading ? styles.disabled : ''}`}
       onClick={e => handleClick(e)}
       data-testid="button">
         {price && 
@@ -17,7 +17,9 @@ const Button = ({name, handleClick, type = '', price}: ButtonType) => {
         }
         <span className={styles.buttonName}>{name}</span>
 
-        <Spinner />
+        {isLoading && 
+          <Spinner />
+        }
     </button>
   );
 }
