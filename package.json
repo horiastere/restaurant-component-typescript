@@ -45,7 +45,8 @@
     ]
   },
   "devDependencies": {
-    "react-test-renderer": "^18.2.0"
+    "react-test-renderer": "^18.2.0",
+    "sass": "^1.58.3"
   },
   "jest": {
     "moduleNameMapper": {
