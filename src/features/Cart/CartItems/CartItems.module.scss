@@ -1,0 +1,52 @@
+@import '../../../styles/colors';
+
+.header {
+  background: #f0f0f0;
+  border-bottom: 1px solid $borderColor;
+  color: #999;
+  display: flex;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+.headerItem {
+  flex-grow: 1;
+  padding: 0 10px;
+}
+
+.items {
+  color: #4d4d4d;
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.item {
+  flex-grow: 1;
+  margin: 0 10px;
+}
+
+.price {
+  flex-shrink: 0;
+}
+
+.btnDelete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+
+  svg {
+    height: 8px;
+    width: 8px;
+  }
+}
+
+.total {
+  justify-content: space-between;
+  border-top: 1px solid #d6d6d6;
+  display: flex;
+  font-weight: bold;
+  padding: 20px 15px;
+}

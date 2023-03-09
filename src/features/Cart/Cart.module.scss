@@ -1,0 +1,21 @@
+@import '../../styles/colors.scss';
+
+.cartPage {
+  background: #f7f7f7;
+  padding-top: 80px;
+}
+
+.cartPageWrap {
+  display: flex;
+}
+
+.checkoutColumn {
+  background: #fff;
+  border: 1px solid $borderColor;
+  margin-right: 15px;
+  width: 100%;
+}
+
+.checkoutColumn:first-child {
+  margin-left: 15px;
+}

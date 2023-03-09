@@ -37,7 +37,7 @@ const MenuModal = () => {
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = parseInt(e.target.value);
 
-    if (val > -1) {
+    if (val > 0) {
       setQuantity(val);
     }
   }
@@ -45,7 +45,7 @@ const MenuModal = () => {
   const handleQuantityClick = (e: React.MouseEvent<HTMLButtonElement>, type: string) => {
     e.preventDefault();
     
-    if ( type === 'decrement' && quantity > 0 ) {
+    if ( type === 'decrement' && quantity > 1 ) {
       setQuantity(state => state - 1);
     }
     
