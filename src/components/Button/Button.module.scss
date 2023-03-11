@@ -1,5 +1,7 @@
+@import '../../styles/colors';
+
 .button {
-  background: #f08b18;
+  background: $mainCtaColor;
   border: none;
   border-radius: 5px;
   color: #fff;
