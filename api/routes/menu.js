@@ -12,8 +12,9 @@ var menu = {
                   "name": "Taco cu Crab/ Crab Taco (140g)",
                   "description": "Tortilla din porumb umpluta cu carne de crab si asezonata cu cascaval si sosuri facute in casa / Corn tortilla filled with crab meat and topped with melted cheese and sauces.",
                   "price": 20,
+                  "currency": "EUR",
                   "tags": [],
-                  "thumbnail": "https://d2vwsr3mua7yp8.cloudfront.net/67fb3a7f-1ae7-4dfb-84e7-90e78edbeabf_d3.jpg",
+                  "thumbnail": "https://tazzcdn.akamaized.net/uploads/menu/7341/16242579-halloumi-and-cheddar-sandwich.f2fe7f3-bHoZK13.jpg",
                   "options": [
                     {
                         "id": 2332,
@@ -37,6 +38,7 @@ var menu = {
                 "name": "Totopos con Aji Salsa (200g)",
                 "description": "Nachos prajiti in casa asezonati cu condiment Cajun, serviti cu aji salsa facuta in casa/ Home fried Nachos, flavoured with Cajun spice and served with homemade aji salsa.",
                 "price": 22,
+                "currency": "EUR",
                 "tags": [],
                 "options": []
               },
@@ -45,6 +47,7 @@ var menu = {
                 "name": "Totopos con salsa (200g)",
                 "description": "Nachos prajiti in casa asezonati cu condiment Cajun, serviti cu salsa de rosii facuta in casa  / Home fried nachos, flavoured with home-mixed cajun spice and served with homemade tomato salsa",
                 "price": 22,
+                "currency": "EUR",
                 "tags": [
                   "VEGAN",
                   "GLUTEN_FREE"
@@ -62,8 +65,9 @@ var menu = {
                 "name": "Quesadilla de pui / Chicken quesadilla (300g)",
                 "description": "ortillas de faina, umplute cu branza si cu carne de pui, servite cu sosuri facute in casa / Grilled soft flour tortilla, filled with cheese and chicken and served with homemade sauces.",
                 "price": 42,
+                "currency": "EUR",
                 "tags": [],
-                "thumbnail": "https://d2vwsr3mua7yp8.cloudfront.net/67fb3a7f-1ae7-4dfb-84e7-90e78edbeabf_d3.jpg",
+                "thumbnail": "https://tazzcdn.akamaized.net/uploads/menu/7341/16242579-halloumi-and-cheddar-sandwich.f2fe7f3-bHoZK13.jpg",
                 "options": [
                   {
                       "id": 1362,
@@ -82,8 +86,9 @@ var menu = {
               "name": "Quesadilla de porc / Pork quesadilla (300g)",
               "description": "Tortillas de faina, umplute cu branza si cu carne de porc, servite cu sosuri facute in casa / Grilled soft flour tortilla, filled with cheese and pork and served with homemade sauces.",
               "price": 42,
+              "currency": "EUR",
               "tags": [],
-              "thumbnail": "https://d2vwsr3mua7yp8.cloudfront.net/67fb3a7f-1ae7-4dfb-84e7-90e78edbeabf_d3.jpg",
+              "thumbnail": "https://tazzcdn.akamaized.net/uploads/menu/7341/16242579-halloumi-and-cheddar-sandwich.f2fe7f3-bHoZK13.jpg",
               "options": [
                 {
                   "id": 9332,
@@ -101,7 +106,8 @@ var menu = {
               "id": 22413791,
               "name": "Quesadilla de legume / Vegetable quesadiila (300g)",
               "description": "Tortillas de faina, umplute cu branza si cu legume, servite cu sosuri facute in casa / Grilled soft flour tortilla, filled with cheese and vegetables and served with homemade sauces.",
-              "price": 40,
+              "price": 40.99,
+              "currency": "EUR",
               "tags": [
                 "VEGAN"
             ],

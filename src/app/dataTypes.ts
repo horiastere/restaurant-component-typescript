@@ -11,6 +11,7 @@ export interface MenuItem {
   name: string;
   description: string;
   price: number;
+  currency: string;
   thumbnail?: string;
   tags?: string[]
   options?: []

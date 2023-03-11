@@ -1,5 +1,8 @@
 .hero {
-  background: url('https://d2vwsr3mua7yp8.cloudfront.net/81cb4748-4a8d-4a63-944b-90423d1503ce.jpg') no-repeat 0 0;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0 0 10px 10px;
+  height: 340px;
   width: 100%;
-  height: 240px;
 }

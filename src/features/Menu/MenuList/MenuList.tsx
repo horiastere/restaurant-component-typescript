@@ -1,4 +1,4 @@
-import styles from './MenuList.module.css';
+import styles from './MenuList.module.scss';
 
 import { useDispatch } from 'react-redux';
 import { openModal } from '../../../components/Modal/modalSlice';
@@ -14,6 +14,11 @@ const MenuList = ({item}: {item: MenuItem}) => {
   const openModalMenu = () => {
     dispatch(openModal({contentType: 'addItemToCart', contentInfo: item}));
   }
+
+  const priceSplit = item.price.toString().split('.');
+
+  const price = priceSplit[0];
+  const decimal = priceSplit[1] || '00';
 
   const tags = item.tags!.map(tag => {
     let tagName;
@@ -36,21 +41,33 @@ const MenuList = ({item}: {item: MenuItem}) => {
   })
 
   return (
-    <article className={styles.listItem}
+    <article className={styles.listItemContainer}
       onClick={openModalMenu}
     >
-      <div className={styles.description}>
+      <div className={styles.listItem}>
+        <div className={styles.description}>
+          <div className={styles.titleContainer}>
+            <h3>{item.name}</h3>
+            {tags.length > 0 && 
+              <div className={styles.tags}>
+                {tags}
+              </div>
+            }
+          </div>
+          
+          <p>{item.description}</p>
+
+          <div className={styles.price}>
+            {price}<sup>{decimal}</sup> {item.currency}
+          </div>
+        </div>
+
         {item.thumbnail && 
-          <img src={item.thumbnail} width="40" height="40" alt="title" className={styles.thumbnail} />
-        }
-        <h3>{item.name}</h3>
-        <p>{item.description}</p>
-      </div>
-      <div className={styles.listInfo}>
-        <div className={styles.price}>{item.price}</div>
-        {tags.length > 0 && 
-          <div className={styles.tags}>
-            {tags}
+          <div className={styles.thumbnail}>
+            <img
+              src={item.thumbnail}
+              alt={item.name}
+            />
           </div>
         }
       </div>

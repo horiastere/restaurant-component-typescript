@@ -1,9 +1,12 @@
-@import './styles/colors';
+@import './styles/variables.scss';
+
+html {
+  background: #f8f8f8;
+}
 
 .App {
-  border: 1px solid $borderColor;
-  color: #666;
-  max-width: 810px;
+  color: #444;
+  max-width: 1210px;
   margin: 0 auto;
 }
 

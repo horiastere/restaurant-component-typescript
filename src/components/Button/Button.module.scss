@@ -1,4 +1,4 @@
-@import '../../styles/colors';
+@import '../../styles/variables.scss';
 
 .button {
   background: $mainCtaColor;
@@ -12,6 +12,10 @@
   max-width: 400px;
   padding: 10px 15px;
   position: relative;
+
+  &:hover {
+    background: #fc1e22;
+  }
 }
 
 .button.addToCart {
