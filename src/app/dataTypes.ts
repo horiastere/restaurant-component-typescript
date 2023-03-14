@@ -38,3 +38,7 @@ export interface CartItem {
   quantity: number;
   extraInstructions?: string;
 }
+
+export interface ActionType<> {
+  payload: {}
+}

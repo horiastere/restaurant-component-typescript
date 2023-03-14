@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { CartItem, ExtraOptionsType, ActionType } from '../../app/dataTypes';
+import { RootState } from '../../app/store';
 
-const itemsFromStorage = JSON.parse(window.sessionStorage.getItem('cart'));
+const itemsFromStorage = JSON.parse(window.sessionStorage.getItem('cart') || '{}');
 
 const initialState = {
   isLoading: false,
@@ -12,16 +14,17 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: {
-      reducer: (state, action) => {
+      reducer: (state, action: ActionType) => {
         state.items.push(action.payload);
         window.sessionStorage.setItem("cart", JSON.stringify(state.items));
         
       },
-      prepare: ({item, extraOptions, extraInstructions, quantity}) => {
+      prepare(payload: CartItem) {
+        const {item, extraOptions, extraInstructions, quantity} = payload;
         return {
           payload: {
             item,
-            extraOptions: extraOptions.filter(el => el.isChecked === true),
+            extraOptions: extraOptions.filter((el: ExtraOptionsType) => el.isChecked === true),
             extraInstructions,
             quantity
           }
@@ -29,13 +32,13 @@ const cartSlice = createSlice({
       }
     },
     removeFromCart: (state, action) => {
-      state.items = state.items.filter(item => item.item.id !== action.payload);
+      state.items = state.items.filter((item: CartItem) => item.item.id !== action.payload);
       window.sessionStorage.setItem("cart", JSON.stringify(state.items));
     }
   }
 });
 
-export const noOfItemsInCart = state => state.cart.items.length;
+export const noOfItemsInCart = (state: RootState) => state.cart.items.length;
 
 export default cartSlice.reducer;
 
