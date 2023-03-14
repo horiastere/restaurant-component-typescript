@@ -1,21 +1,15 @@
-@import '../../styles/variables.scss';
-
 .cartPage {
   background: #f7f7f7;
+  display: flex;
   padding-top: 80px;
 }
 
-.cartPageWrap {
-  display: flex;
+.checkoutUserInfo {
+  width: 40%;
+  margin: 0 15px 0 15px;
 }
 
-.checkoutColumn {
-  background: #fff;
-  border: 1px solid $borderColor;
+.checkoutItems {
+  flex-grow: 1;
   margin-right: 15px;
-  width: 100%;
-}
-
-.checkoutColumn:first-child {
-  margin-left: 15px;
 }

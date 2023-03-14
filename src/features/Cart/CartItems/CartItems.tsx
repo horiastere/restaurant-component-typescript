@@ -2,50 +2,85 @@ import { useAppSelector } from "../../../app/hooks";
 import type { CartItem } from "../../../app/dataTypes";
 
 import { useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 
 import { removeFromCart } from "../cartSlice";
 
+import Price from "../../../components/Price/Price";
+import Button from "../../../components/Button/Button";
+
 import styles from './CartItems.module.scss'
 
-import {ReactComponent as Delete} from '../../../assets/close.svg';
+import {ReactComponent as Delete} from '../../../assets/delete.svg';
+import React from "react";
 
 const CartItems = () => {
 
   const items = useAppSelector(state => state.cart.items);
   const dispatch = useDispatch();
-  
-  const cartItems = items.map((el: CartItem) => 
-    <div className={styles.items} key={el.item.id}>
-      <span>{el.quantity}x</span>
-      <span className={styles.item}>{el.item.name}</span>
-      <span className={styles.price}>{el.item.price} RON</span>
-      <span>
-        <button
-          className={styles.btnDelete}
-          onClick={() => dispatch(removeFromCart(el.item.id))}
-        >
-          <Delete />
-        </button>
-      </span>
-    </div>
-  );
+  const navigate = useNavigate();
+
+  const handleGoToMenu = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate('/');
+  }
+
+  const cartItems = items.map((el: CartItem) => {
+
+    return (
+      <div className={styles.item} key={el.item.id}>
+        {el.item.thumbnail && 
+          <div className={styles.thumbnail}>
+            <img
+              src={el.item.thumbnail}
+              alt={el.item.name}
+              title={el.item.name}
+            />
+          </div>
+        }
+
+        <div className={styles.itemInfo}>
+          <h3>{el.item.name}</h3>
+          <p><strong>Extra:</strong> Jalapenos, Cheese</p>
+          <p><strong>Special mentions:</strong> No salt</p>
+        </div>
+
+        <div className={styles.quantity}>
+          quantity
+        </div>
+
+        <div className={styles.priceContainer}>
+          <button
+            className={styles.btnDelete}
+            onClick={() => dispatch(removeFromCart(el.item.id))}
+          >
+            <Delete />
+          </button>
+          <Price fullPrice={el.item.price} />
+        </div>
+      </div>
+    );
+  });
 
   return (
     <>
-      <div className={styles.header}>
-        <span>Qty</span>
-        <span className={styles.headerItem}>Item</span>
-        <span>Price</span>
-      </div>
+      {items.length > 0 ? 
+        <>
+          {cartItems}
 
-      <div>
-        {cartItems}
-      </div>
-      
-      <div className={styles.total}>
-        <div>Total</div>
-        <div>154 RON</div>
-      </div>
+          <div className={styles.total}>
+            Total: 154 RON
+          </div>
+        </>
+      :
+        <div className={styles.emptyCart}>
+          <strong>Cart is empty</strong>
+
+          <div>
+            <Button name="Got to menu" handleClick={e => handleGoToMenu(e)} />
+          </div>
+        </div>
+      } 
     </>
   );
 }

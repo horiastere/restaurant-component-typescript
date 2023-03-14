@@ -1,52 +1,82 @@
 @import '../../../styles/variables.scss';
 
-.header {
-  background: #f0f0f0;
-  border-bottom: 1px solid $borderColor;
-  color: #999;
-  display: flex;
-  font-weight: bold;
-  padding: 10px 15px;
-}
-
-.headerItem {
-  flex-grow: 1;
-  padding: 0 10px;
-}
-
-.items {
-  color: #4d4d4d;
-  display: flex;
-  font-size: 14px;
-  font-weight: bold;
-  margin: 15px;
-}
-
 .item {
-  flex-grow: 1;
-  margin: 0 10px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  margin-bottom: 15px;
+  padding: 15px;
 }
 
-.price {
-  flex-shrink: 0;
+.thumbnail {
+  border-radius: 10px;
+  min-height: 80px;
+  min-width: 80px;
+  height: 80px;
+  width: 80px;
+  overflow: hidden;
+
+  img {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+.itemInfo {
+  flex-grow: 1;
+  margin-left: 10px;
+
+  h3 {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .btnDelete {
   background: none;
   border: none;
   cursor: pointer;
-  margin-left: 10px;
+  padding: 0;
+  text-align: right;
 
   svg {
-    height: 8px;
-    width: 8px;
+    opacity: .6;
+    height: 20px;
+    width: 20px;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
 .total {
-  justify-content: space-between;
-  border-top: 1px solid #d6d6d6;
-  display: flex;
+  border-top: 2px solid #ccc;
+  font-size: 18px;
   font-weight: bold;
-  padding: 20px 15px;
+  margin-top: 30px;
+  padding-top: 20px;
+  text-align: right;
+}
+
+.emptyCart {
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 15px;
+
+  button {
+    margin-top: 20px;
+  }
 }

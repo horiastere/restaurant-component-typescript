@@ -3,6 +3,8 @@ import styles from './MenuList.module.scss';
 import { useDispatch } from 'react-redux';
 import { openModal } from '../../../components/Modal/modalSlice';
 
+import Price from '../../../components/Price/Price';
+
 import { ReactComponent as IconGlutenFree } from '../../../assets/gluten-free.svg';
 import { ReactComponent as IconVegan } from '../../../assets/vegetarian.svg';
 
@@ -14,11 +16,6 @@ const MenuList = ({item}: {item: MenuItem}) => {
   const openModalMenu = () => {
     dispatch(openModal({contentType: 'addItemToCart', contentInfo: item}));
   }
-
-  const priceSplit = item.price.toString().split('.');
-
-  const price = priceSplit[0];
-  const decimal = priceSplit[1] || '00';
 
   const tags = item.tags!.map(tag => {
     let tagName;
@@ -58,7 +55,7 @@ const MenuList = ({item}: {item: MenuItem}) => {
           <p>{item.description}</p>
 
           <div className={styles.price}>
-            {price}<sup>{decimal}</sup> {item.currency}
+            <Price fullPrice={item.price} /> {item.currency}
           </div>
         </div>
 

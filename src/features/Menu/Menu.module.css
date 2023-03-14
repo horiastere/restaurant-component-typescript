@@ -1,8 +1,18 @@
 .hero {
-  background-position: 0 0;
+  align-items: center;
+  background-position: 0 -100px;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 0 0 10px 10px;
+  display: flex;
+  justify-content: center;
   height: 340px;
   width: 100%;
+}
+
+.logo {
+  background: #fff;
+  border-radius: 10px;
+  max-height: 150px;
+  max-width: 150px;
 }

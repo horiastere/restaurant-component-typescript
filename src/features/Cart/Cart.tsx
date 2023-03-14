@@ -1,3 +1,4 @@
+import UserInfo from "./UserInfo/UserInfo";
 import CartItems from "./CartItems/CartItems";
 
 import styles from './Cart.module.scss'
@@ -5,13 +6,11 @@ import styles from './Cart.module.scss'
 const Cart = () => {
   return (
     <main className={styles.cartPage}>
-      <div className={styles.cartPageWrap}>
-        <div className={styles.checkoutColumn}>
-          Checkout info
-        </div>
-        <div className={styles.checkoutColumn}>
-          <CartItems />
-        </div>
+      <div className={styles.checkoutUserInfo}>
+        <UserInfo />
+      </div>
+      <div className={styles.checkoutItems}>
+        <CartItems />
       </div>
     </main>
   )

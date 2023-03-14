@@ -21,10 +21,9 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarContent}>
-        <h1 data-testid="title" className={styles.restaurantName}>Blue Margarita</h1>
+        <h1 data-testid="title" className={styles.restaurantName}><Link to="/">Hard Rock Cafe</Link></h1>
 
         <div className={styles.navButtons}>
-        
           <Link to="/"><MenuIcon /></Link>
           <Link to="/info"><InfoIcon /></Link>
           <Link to="/cart"><span key={animationKey} className={styles.cartItems}>{noOfItemsInCart.length}</span><CartIcon /></Link>
