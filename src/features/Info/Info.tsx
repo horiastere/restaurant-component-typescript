@@ -1,8 +1,12 @@
+import styles from './Info.module.scss';
+
 const Info = () => {
   return (
-    <div>
-      <h1>Info page</h1>
-    </div>
+    <main className={styles.infoPage}>
+      <h1>Restaurant info page</h1>
+
+      <p>[TODO] Restaurant information will be displayed here</p>
+    </main>
   )
 }
 
