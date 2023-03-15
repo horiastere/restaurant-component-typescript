@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { useAppSelector } from "../../../app/hooks";
-import type { CartItem } from "../../../app/dataTypes";
+import type { CartItem, ExtraOptionsType } from "../../../app/dataTypes";
 import formatPrice from "../../../app/Util";
 
 import { useDispatch } from 'react-redux';
@@ -54,8 +54,16 @@ const CartItems = () => {
 
         <div className={styles.itemInfo}>
           <h3>{el.item.name}</h3>
-          <p><strong>Extra:</strong> Jalapenos, Cheese</p>
-          <p><strong>Special mentions:</strong> No salt</p>
+          {el.extraOptions.length > 0 &&
+            <p>
+              <strong>Extra: </strong> 
+              {el.extraOptions.map((option: ExtraOptionsType, index) =>  ((index) ? ', ' : '') + option.name)}
+            </p>
+          }
+
+          {el.extraInstructions &&
+            <p><strong>Special mentions:</strong> {el.extraInstructions}</p>
+          }
         </div>
 
         {/* <div className={styles.quantity}>
