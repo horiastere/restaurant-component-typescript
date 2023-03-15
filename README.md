@@ -20,6 +20,10 @@ It's an online ordering tool that can be used by restaurants that do not have an
 2. navigate to **/src** folder and run `npm start` (launches the application)
 2. navigate to **/api** folder and run `npm start` (start the server that the application uses to fetch data)
 
+## Testing (WIP)
+- `npm run test` to run tests
+- more tests will be added in the future
+
 ## Known issues
 The app is a work in progress, so some features are not 100% complete yet.
 Features that will be added in time:
