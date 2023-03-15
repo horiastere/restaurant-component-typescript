@@ -5,7 +5,7 @@ This project was created to keep myself up-to-date with latest React changes and
 
 It's an online ordering tool that can be used by restaurants that do not have an online cart on their website. It can be integrated into an existing website (via iframe for example), offering customers the possibility to browse the restaurants menu, add items to the cart and place the order.
 
-![](http://www.reactiongifs.us/wp-content/uploads/2013/10/nuh_uh_conan_obrien.gif)
+![](https://github.com/horiastere/restaurant-component-typescript/blob/readme/restaurant-component-readme.gif)
 
 ## Technologies used
 - React
