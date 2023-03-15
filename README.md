@@ -1,46 +1,30 @@
-# Getting Started with Create React App
+# An online order placing tool for restaurants
+This project was created to keep myself up-to-date with latest React changes and play around with different technologies.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What it does
 
-## Available Scripts
+It's an online ordering tool that can be used by restaurants that do not have an online cart on their website. It can be integrated into an existing website (via iframe for example), offering customers the possibility to browse the restaurants menu, add items to the cart and place the order.
 
-In the project directory, you can run:
+![](http://www.reactiongifs.us/wp-content/uploads/2013/10/nuh_uh_conan_obrien.gif)
 
-### `npm start`
+## Technologies used
+- React
+- Redux Toolkit
+- TypeScript
+- SCSS
+- NodeJS
+- ExpressJS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How to run
+1. clone the repository
+2. navigate to src folder and run `npm start` (launches the application)
+2. navigate to api folder and run `npm start` (start the server that the application uses to fetch data)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Known issues
+The app is a work in progress, so some features are not 100% complete yet.
+Features that will be added in time:
+- [ ] /restaurant API route to fetch restaurant info (currently info is hardcoded)
+- [ ] Search filter in main page
+- [ ] Restaurant information page
+- [ ] Validation of input fields in Cart page & success message when placing an order
+- [ ] Add DB to store data
