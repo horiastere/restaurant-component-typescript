@@ -24,13 +24,18 @@ It's an online ordering tool that can be used by restaurants that do not have an
 - `npm run test` to run tests
 - more tests will be added in the future
 
-## Known issues
-The app is a work in progress, so some features are not 100% complete yet.
-Features that will be added in time:
+## Future features
 - [ ] /restaurant API route to fetch restaurant info (currently info is hardcoded)
 - [ ] Search filter in main page
 - [ ] Restaurant information page
-- [ ] Validation of input fields in Cart page & success message when placing an order
 - [ ] Unit tests for most components
 - [ ] E2E testing with Cypress
 - [ ] Add DB to store data
+- [ ] Responsiveness
+
+## Known issues
+The app is a work in progress, so some features are not 100% complete yet.
+- Adding same 2 items to the cart causes issues. Will need to refactor 'add to cart' logic
+- No ability to change quantity in Cart page
+- No validation of input fields in Cart page & no success message when placing an order
+- Harcoded currency
