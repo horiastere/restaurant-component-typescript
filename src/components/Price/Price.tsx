@@ -1,8 +1,7 @@
-const Price = ({fullPrice}: {fullPrice: number}) => {
-  const priceSplit = fullPrice.toString().split('.');
+import formatPrice from "../../app/Util";
 
-  const price = priceSplit[0];
-  const decimal = priceSplit[1] || '00';
+const Price = ({fullPrice}: {fullPrice: number}) => {
+  const [price, decimal] = formatPrice(fullPrice);
 
   return(
     <strong>

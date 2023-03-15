@@ -1,5 +1,8 @@
+import React, { useState, useEffect } from "react";
+
 import { useAppSelector } from "../../../app/hooks";
 import type { CartItem } from "../../../app/dataTypes";
+import formatPrice from "../../../app/Util";
 
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
@@ -11,8 +14,7 @@ import Button from "../../../components/Button/Button";
 
 import styles from './CartItems.module.scss'
 
-import {ReactComponent as Delete} from '../../../assets/delete.svg';
-import React from "react";
+import { ReactComponent as Delete } from '../../../assets/delete.svg';
 
 const CartItems = () => {
 
@@ -25,8 +27,19 @@ const CartItems = () => {
     navigate('/');
   }
 
-  const cartItems = items.map((el: CartItem) => {
+  const [totalPrice, setTotalPrice] = useState(0);
 
+  useEffect(() => {
+    setTotalPrice(0);
+    
+    items.forEach((item: CartItem) => {
+      setTotalPrice(totalPrice => totalPrice + item.item.price);
+    })
+  }, [items]);
+
+  const [price, decimal] = formatPrice(totalPrice);
+
+  const cartItems = items.map((el: CartItem) => {
     return (
       <div className={styles.item} key={el.item.id}>
         {el.item.thumbnail && 
@@ -45,9 +58,9 @@ const CartItems = () => {
           <p><strong>Special mentions:</strong> No salt</p>
         </div>
 
-        <div className={styles.quantity}>
+        {/* <div className={styles.quantity}>
           quantity
-        </div>
+        </div> */}
 
         <div className={styles.priceContainer}>
           <button
@@ -69,7 +82,7 @@ const CartItems = () => {
           {cartItems}
 
           <div className={styles.total}>
-            Total: 154 RON
+            Total: {price}.{decimal} EUR
           </div>
         </>
       :

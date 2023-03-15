@@ -6,6 +6,8 @@ import { addToCart } from '../../Cart/cartSlice';
 import Checkbox from "../../../components/Checkbox/Checkbox";
 import Button from '../../../components/Button/Button';
 
+import formatPrice from '../../../app/Util';
+
 import type { ExtraOptionsType } from '../../../app/dataTypes';
 
 import styles from './MenuModal.module.css';
@@ -17,6 +19,8 @@ const MenuModal = () => {
 
   const item = useAppSelector(state => state.modal.contentInfo);
   const availableExtraOptions = item.options.map((el: ExtraOptionsType) => ({...el, isChecked: false}));
+
+  const [price, decimal] = formatPrice(item.price);
 
   const [extraOptions, setExtraOptions] = useState(availableExtraOptions);
   const [extraInstructions, setExtraInstructions] = useState('');
@@ -111,7 +115,7 @@ const MenuModal = () => {
           name="Add to cart"
           type="addToCart"
           handleClick={e => handleSubmit(e)}
-          price="20"
+          price={`${price}.${decimal}`}
           isLoading={isLoading}
         />
         {/* <Button name="Submit" handleClick={handleSubmit} />

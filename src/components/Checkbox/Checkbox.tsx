@@ -1,5 +1,6 @@
 import styles from './Checkbox.module.css';
 
+import formatPrice from '../../app/Util';
 import type { ExtraOptionsType } from '../../app/dataTypes';
 
 import { ReactComponent as CheckboxImg } from '../../assets/checkmark.svg';
@@ -10,6 +11,7 @@ interface propsType {
 }
 
 const Checkbox = ({option, handleOptionSelect}: propsType) => {
+  const [price, decimal] = formatPrice(option.price);
   return (
     <div className={styles.checkboxWrap}>
       <input type="checkbox" onChange={() => handleOptionSelect(option)} id={`${option.id}`} />
@@ -21,7 +23,7 @@ const Checkbox = ({option, handleOptionSelect}: propsType) => {
           {option.name}
         </span>
         <span>
-          +{option.price}
+          +{price}.{decimal}
         </span>
       </label>
     </div>
